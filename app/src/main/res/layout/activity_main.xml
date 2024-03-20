@@ -18,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/btnStart"
@@ -42,7 +43,8 @@
         app:layout_constraintEnd_toEndOf="@+id/tvClock"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/tvClock"
-        app:layout_constraintTop_toBottomOf="@+id/tvClock" />
+        app:layout_constraintTop_toBottomOf="@+id/tvClock"
+        android:textAlignment="center"/>
 
     <GridLayout
         android:layout_width="wrap_content"
@@ -182,4 +184,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Finish"
+        android:onClick="finishGame"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore" />
 </androidx.constraintlayout.widget.ConstraintLayout>

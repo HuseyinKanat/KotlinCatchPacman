@@ -11,6 +11,7 @@ import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var arr: Array<ImageView>
     lateinit var mode:Modes
     private  var score= 0
+    private lateinit var countDownTimer: CountDownTimer
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,15 +51,18 @@ class MainActivity : AppCompatActivity() {
     fun startGame(view:View) {
         mode= Modes.valueOf(binding.spinner.selectedItem.toString())
         showImageRandomly()
-        object : CountDownTimer(15500, 1000) {
+        binding.btnStart.visibility= Button.INVISIBLE
+        binding.btnFinish.visibility=  Button.VISIBLE
+        countDownTimer= object : CountDownTimer(15500, 1000) {
             override fun onFinish() {
 
                 binding.tvClock.text = "Time: 0"
-                binding.tvScore.text = "Score:"+0
+                binding.tvScore.text = "Your Score:"+0
                 handler.removeCallbacks(runnable)
-
+                binding.btnStart.visibility= Button.VISIBLE
                 for (image in arr) {
                     image.visibility = View.INVISIBLE
+                    binding.btnFinish.visibility=  Button.INVISIBLE
                 }
 
 
@@ -81,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
                 alert.show()
                 score=0
-                binding.tvScore.text = "Score:"+score
+                binding.tvScore.text = "Your Score:"+score
 
             }
 
@@ -107,8 +112,15 @@ class MainActivity : AppCompatActivity() {
 
         handler.post(runnable)
     }
-
+    fun finishGame(view: View){
+        countDownTimer.let {
+            it.cancel()
+            it.onFinish()
+        }
+    }
 }
+
+
 enum class Modes{
 
     EASY{
