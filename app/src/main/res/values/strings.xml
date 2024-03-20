@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CatchPacman</string>
+    <string name="your_score_default">Your Score:0</string>
+</resources>

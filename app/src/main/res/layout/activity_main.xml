@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="0dp"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Time: 0"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:onClick="startGame"
+        android:text="Start"
+        app:layout_constraintEnd_toEndOf="@+id/tvScore"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="@+id/tvScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore" />
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/your_score_default"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvClock"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvClock"
+        app:layout_constraintTop_toBottomOf="@+id/tvClock" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStart"
+        app:layout_constraintVertical_bias="0.126"
+        tools:ignore="InvalidId">
+
+        <ImageView
+            android:id="@+id/iv00"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="0dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+        <ImageView
+            android:id="@+id/iv01"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+        <ImageView
+            android:id="@+id/iv02"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+        <ImageView
+            android:id="@+id/iv10"
+            android:layout_width="100dp"
+            android:layout_height="95dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_margin="10dp"
+            android:layout_marginStart="0dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+        <ImageView
+            android:id="@+id/iv11"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+        <ImageView
+            android:id="@+id/iv12"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+        <ImageView
+            android:id="@+id/iv20"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_margin="10dp"
+            android:layout_marginStart="0dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+        <ImageView
+            android:id="@+id/iv21"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+        <ImageView
+            android:id="@+id/iv22"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="incrementScore"
+            android:src="@drawable/ic_pacman" />
+
+    </GridLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="158dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="112dp"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMode"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:text="Select Mode :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
