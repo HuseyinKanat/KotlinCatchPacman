@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     fun incrementScore(view: View){
         score = score + 1
-        binding.tvScore.text = "Score: $score"
+        binding.tvScore.text = "Your Score: $score"
 
     }
 
