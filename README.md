@@ -28,10 +28,4 @@ To install CatchPacman, you'll need to have Android Studio installed on your com
 5. Keep an eye on the timer and score displayed at the top of the screen.
 6. When the time runs out, the game will present you with your final score and offer options to restart or quit.
 
-## Contributing
 
-Contributions are welcome! If you have suggestions for improvements or bug fixes, please feel free to fork the repository and submit a pull request.
-
-## License
-
-CatchPacman is open-source under the MIT License. See the LICENSE file for more information.
